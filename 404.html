@@ -2,20 +2,82 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Page Not Found</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="404 Page Not Found - BrightWell Mental Health" />
+  <meta name="author" content="BrightWell Mental Health" />
+
+  <meta property="og:title" content="Page Not Found - BrightWell Mental Health" />
+  <meta property="og:description" content="Oops! The page you're looking for doesn't exist." />
+  <meta property="og:image" content="BWMH_Web_Logo_Optimized.png" />
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Page Not Found - BrightWell Mental Health" />
+  <meta name="twitter:description" content="Oops! The page you're looking for doesn't exist." />
+  <meta name="twitter:image" content="BWMH_Web_Logo_Optimized.png" />
+
+  <title>404 | BrightWell Mental Health</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <style>
-    body {
-      font-family: sans-serif;
+    .error-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      padding: 100px;
+      min-height: 60vh;
+      padding: 2rem;
+    }
+
+    .error-container h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .error-container p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .error-container a.button {
+      padding: 0.75rem 1.5rem;
+      background-color: #0055aa;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    .error-container a.button:hover {
+      background-color: #003f82;
     }
   </style>
 </head>
-<body>
-  <h1>404 - Page Not Found</h1>
-  <p>Oops! The page you're looking for doesn't exist.</p>
-  <a href="/">Go back to home</a>
+
+<body id="top">
+  <header class="site-header">
+    <a href="/" class="logo-link">
+      <img src="BWMH_Web_Logo_Optimized.png" alt="BWMH Logo" class="site-logo" />
+    </a>
+    <h1 class="site-title">BrightWell Mental Health (BWMH)</h1>
+  </header>
+
+  <main>
+    <section class="error-container">
+      <h1>404 – Page Not Found</h1>
+      <p>Sorry, the page you were looking for doesn't exist or has been moved.</p>
+      <a href="/" class="button">Return to Homepage</a>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Privacy Policy:</strong> All client information is confidential and managed in accordance with ethical and legal standards.</p>
+    <p>&copy; 2025 BrightWell Mental Health, LLC</p>
+  </footer>
 </body>
 </html>
 
