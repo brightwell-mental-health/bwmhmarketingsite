@@ -86,15 +86,17 @@ ul li {
 }
 
 /* About Section */
+
 .about-content {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
+  align-items: flex-start;
+  gap: 2rem;
 }
 
 .about-photo {
-  width: 200px;
-  border-radius: 8px;
+  width: 200px; /* Or any fixed width */
+  height: auto;
+  flex-shrink: 0; /* Prevent shrinking */
   object-fit: cover;
 }
 
