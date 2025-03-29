@@ -1,5 +1,4 @@
-
-/* Reset & base styles */
+/* Reset & Base Styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -30,18 +29,26 @@ a:hover {
 .site-header {
   display: flex;
   align-items: center;
-  padding: 1rem;
+  justify-content: center;
+  padding: 1rem 1rem;
   background-color: #fff;
   border-bottom: 1px solid #ddd;
+  position: relative;
+  height: 80px;
 }
 
 .site-logo {
   height: 60px;
-  margin-right: 1rem;
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .site-title {
   font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
 }
 
 /* Navigation */
@@ -52,6 +59,13 @@ nav.nav-bar {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex: 1;
 }
 
 .nav-links a,
@@ -67,7 +81,7 @@ nav.nav-bar {
   gap: 0.5rem;
 }
 
-/* Layout */
+/* Main Layout */
 main {
   padding: 1.5rem;
 }
@@ -98,6 +112,7 @@ ul li {
   display: flex;
   align-items: flex-start;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .about-photo {
@@ -143,16 +158,30 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
   .site-header {
     flex-direction: column;
-    align-items: flex-start;
+    height: auto;
+    padding: 1rem 1rem 1.5rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .site-logo {
+    position: static;
+    transform: none;
+    margin-bottom: 0.5rem;
   }
 
   .nav-bar {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .nav-links {
+    justify-content: flex-start;
+    flex-wrap: wrap;
   }
 
   .lang-switch {
@@ -161,9 +190,11 @@ footer {
 
   .about-content {
     flex-direction: column;
+    align-items: center;
   }
 
   .about-photo {
     width: 100%;
+    max-width: 300px;
   }
 }
