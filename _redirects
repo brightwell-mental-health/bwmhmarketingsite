@@ -1,0 +1,10 @@
+# Handle /404.html explicitly, return a 404
+/404.html   /404.html   404
+
+# Chinese homepage shortcuts
+/zh         /index-zh.html   200
+/zh/        /index-zh.html   200
+
+# SPA fallback: everything else → index.html
+/*          /index.html      200
+
