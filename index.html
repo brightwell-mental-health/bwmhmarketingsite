@@ -42,30 +42,40 @@
   gtag('config', 'G-GM586X7LR7');
 </script>
 <script>
-    (function() {
-      const savedLang = localStorage.getItem("preferredLang");
-      const currentPage = window.location.pathname.split("/").pop();
+  (function () {
+    // Avoid ping-pong in case of repeated loads
+    if (sessionStorage.getItem("langRedirected") === "1") return;
 
-      if (savedLang) {
-        if (savedLang !== currentPage) {
-          window.location.href = savedLang;
-        }
-      } else {
-        const userLang = navigator.language || navigator.userLanguage;
-        if (userLang.startsWith("zh")) {
-          localStorage.setItem("preferredLang", "index-zh.html");
-          if (currentPage === "" || currentPage === "index.html") {
-            window.location.href = "index-zh.html";
-          }
-        } else {
-          localStorage.setItem("preferredLang", "index.html");
-          if (currentPage === "" || currentPage === "index-zh.html") {
-            window.location.href = "index.html";
-          }
-        }
+    // Normalize current page name (root "/" behaves like "index.html")
+    var p = window.location.pathname;
+    var current = p === "/" || p.endsWith("/") ? "index.html" : p.split("/").pop();
+
+    // If user already chose, honor it (one-time redirect)
+    var saved = localStorage.getItem("preferredLang");
+    if (saved && saved !== current) {
+      sessionStorage.setItem("langRedirected", "1");
+      window.location.replace(saved); // replace = no back-button loop
+      return;
+    }
+
+    // No saved preference: detect once
+    if (!saved) {
+      var lang = (navigator.language || navigator.userLanguage || "").toLowerCase();
+      var wantZh = lang.startsWith("zh");
+      var target = wantZh ? "index-zh.html" : "index.html";
+
+      // Save choice so we don't keep detecting
+      localStorage.setItem("preferredLang", target);
+
+      // Redirect only if we're on the "wrong" page (or bare root)
+      if (target !== current) {
+        sessionStorage.setItem("langRedirected", "1");
+        window.location.replace(target);
       }
-    })();
-  </script>
+    }
+  })();
+</script>
+
 </head>
 
 <body id="top">

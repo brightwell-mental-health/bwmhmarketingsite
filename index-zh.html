@@ -47,30 +47,10 @@
 </script>
 
 <script>
-    (function() {
-      const savedLang = localStorage.getItem("preferredLang");
-      const currentPage = window.location.pathname.split("/").pop();
+  // On Chinese page, just remember the user's choice. No redirect here.
+  localStorage.setItem("preferredLang", "index-zh.html");
+</script>
 
-      if (savedLang) {
-        if (savedLang !== currentPage) {
-          window.location.href = savedLang;
-        }
-      } else {
-        const userLang = navigator.language || navigator.userLanguage;
-        if (userLang.startsWith("zh")) {
-          localStorage.setItem("preferredLang", "index-zh.html");
-          if (currentPage === "" || currentPage === "index.html") {
-            window.location.href = "index-zh.html";
-          }
-        } else {
-          localStorage.setItem("preferredLang", "index.html");
-          if (currentPage === "" || currentPage === "index-zh.html") {
-            window.location.href = "index.html";
-          }
-        }
-      }
-    })();
-  </script>
 
 </head>
 
