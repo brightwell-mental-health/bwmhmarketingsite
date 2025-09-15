@@ -41,7 +41,31 @@
 
   gtag('config', 'G-GM586X7LR7');
 </script>
+<script>
+    (function() {
+      const savedLang = localStorage.getItem("preferredLang");
+      const currentPage = window.location.pathname.split("/").pop();
 
+      if (savedLang) {
+        if (savedLang !== currentPage) {
+          window.location.href = savedLang;
+        }
+      } else {
+        const userLang = navigator.language || navigator.userLanguage;
+        if (userLang.startsWith("zh")) {
+          localStorage.setItem("preferredLang", "index-zh.html");
+          if (currentPage === "" || currentPage === "index.html") {
+            window.location.href = "index-zh.html";
+          }
+        } else {
+          localStorage.setItem("preferredLang", "index.html");
+          if (currentPage === "" || currentPage === "index-zh.html") {
+            window.location.href = "index.html";
+          }
+        }
+      }
+    })();
+  </script>
 </head>
 
 <body id="top">
@@ -60,7 +84,7 @@
       <a href="#contact">Contact</a>
     </div>
     <div class="lang-switch">
-      <a href="index-zh.html">🇨🇳 中文</a>
+      <a href="index-zh.html" onclick="localStorage.setItem('preferredLang','index-zh.html')">🇨🇳 中文</a>
     </div>
   </nav>
 
