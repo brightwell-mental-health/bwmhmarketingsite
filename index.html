@@ -1,29 +1,154 @@
-<!doctype html><html lang="en"><head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>BrightWell Mental Health</title>
-<script>
-(function () {
-  // prevent repeat redirect in same tab
-  if (sessionStorage.getItem("langRedirected")==="1") return;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BrightWell Mental Health provides compassionate telehealth therapy for individuals and couples, specializing in CBT, DBT, and holistic wellness. Bilingual services available in English and Mandarin. Serving clients in PA and NJ, including Princeton University students." />
+  <meta name="keywords" content="telehealth therapy, online counseling, mental health, CBT, DBT, holistic wellness, individual therapy, couples therapy, Chinese therapist, Mandarin-speaking therapist, Princeton therapy, anxiety, depression, licensed professional counselor, LPC, PA, NJ, Princeton University therapy" />
+  <meta name="author" content="BrightWell Mental Health" />
 
-  var saved = localStorage.getItem("preferredLang");
-  if (saved) {
-    sessionStorage.setItem("langRedirected","1");
-    location.replace(saved);
-    return;
-  }
+  <!-- Open Graph -->
+  <meta property="og:title" content="BrightWell Mental Health" />
+  <meta property="og:description" content="Compassionate telehealth therapy specializing in CBT, DBT, and holistic mental wellness." />
+  <meta property="og:image" content="BWMH_Web_Logo_Optimized.png" />
+  <meta property="og:type" content="website" />
 
-  var lang=(navigator.language||"").toLowerCase();
-  var target = lang.startsWith("zh") ? "/index-zh.html" : "/en.html";
-  localStorage.setItem("preferredLang", target);
-  sessionStorage.setItem("langRedirected","1");
-  location.replace(target);
-})();
-</script>
-<noscript>
-  <!-- JS off: default to English -->
-  <meta http-equiv="refresh" content="0; url=/en.html">
-</noscript>
-</head><body></body></html>
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="BWHM" />
+  <link rel="manifest" href="/site.webmanifest" />
 
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BrightWell Mental Health" />
+  <meta name="twitter:description" content="Accessible telehealth therapy for individuals and couples." />
+  <meta name="twitter:image" content="BWMH_Web_Logo_Optimized.png" />
+
+  <title>BrightWell Mental Health</title>
+  
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+
+</head>
+
+<body id="top">
+  <header class="site-header">
+    <a href="#" class="logo-link">
+      <img src="BWMH_Web_Logo_Optimized.png" alt="BWMH Logo" class="site-logo" />
+    </a>
+    <h1 class="site-title">BrightWell Mental Health</h1>
+  </header>
+
+  <nav role="navigation" class="nav-bar">
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Our Practice</a>
+      <a href="#insurance-payment">Insurance & Rates</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="lang-switch">
+      <a href="index-zh.html" onclick="localStorage.setItem('preferredLang','index-zh.html')">🇨🇳 中文</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="welcome">
+      <h2>Welcome to BrightWell Mental Health</h2>
+      <p>Life can feel overwhelming at times—whether you’re facing anxiety, depression, relationship struggles, or major life transitions. You don’t have to go through it alone. Reaching out is a brave first step, and I am here to walk with you on your journey toward healing and growth</p><br>
+      <p>At BrightWell Mental Health, my goal is to provide a safe, empathetic, and client-centered space where you feel truly seen and supported. Through evidence-based therapy and authentic connection, we will work together to bring greater clarity, emotional wellness, and meaningful, lasting change.</p>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <img src="Ruiqing.jpeg" alt="Licensed Professional Counselor Ruiqing Yu" class="about-photo" />
+        <div class="about-text">
+          <p>I’m Dr. Ruiqing (Regina) Yu, a Licensed Professional Counselor (LPC) in Pennsylvania and New Jersey, with a Doctorate in Mental Health Counseling and Education.</p>
+          <p>With over 7 years of experience, I have worked with adults from diverse backgrounds, helping them navigate challenges such as stress, anxiety, depression, trauma, and relationship concerns. My therapeutic style is compassionate, integrative, and grounded in clinical expertise. I deeply respect each individual’s unique story and provide empathy, professionalism, and genuine care as we work toward your goals.</p><br>
+          <h3>Education & Credentials</h3>
+          <ul>
+            <li>Licensed Professional Counselor (LPC) – PA & NJ</li>
+            <li>NPI Number: 1962178533</li>
+            <li>Doctorate in Mental Health Counseling and Education</li>
+            <li>7+ years of clinical experience working with diverse populations</li>
+            <li>Fluent in Mandarin Chinese</li>
+            <li>Sessions available in both English and Mandarin Chinese</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2>Our Practice</h2>
+      <p>At BrightWell Mental Health, therapy is tailored to meet your unique needs and goals. I integrate evidence-based approaches with compassionate care, creating a safe and supportive environment where healing and growth can occur.</p>
+      <p><strong>Therapeutic Modalities:</strong></p>
+      <ul>
+        <li><strong>Adults & Couples Therapy:</strong> <br>Supporting individuals and couples in strengthening communication, navigating conflict, and deepening emotional connection.</li>
+        <li><strong>Cognitive Behavioral Therapy (CBT):</strong> <br>Identifying and challenging negative thought patterns to promote healthier ways of thinking and behaving.</li>
+        <li><strong>Dialectical Behavior Therapy (DBT):</strong> <br>Using mindfulness and emotional regulation strategies to improve emotional balance and interpersonal effectiveness.</li>
+      </ul>
+      <p>In every session, I provide empathy, authenticity, and unconditional positive regard. This foundation helps cultivate a strong therapeutic alliance and empowers you to build meaningful coping strategies for long-term well-being.</p>
+    </section>
+
+    <section id="insurance-payment">
+      <h2>Insurance & Rates</h2>
+      <p>BrightWell Mental Health is currently an out-of-network provider, with the exception of clients covered under the Princeton University Student Health Plan (SHP).</p>
+
+      <div class="insurance-box">
+        <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
+          <div style="flex: 1; min-width: 250px;">
+            <h3>In-Network Coverage</h3>
+            <ul>
+              <li>Princeton University Student Health Plan (SHP)</li>
+            </ul>
+          </div>
+          <div style="flex: 1; min-width: 250px;">
+            <h3>Out-of-Network Coverage</h3>
+            <ul>
+              <li>Sessions are billed directly, and payment is due at the time of service.</li>
+              <li>A superbill (detailed receipt) can be provided so you may submit for possible reimbursement from your insurance company.</li>
+              <li>Please note: Reimbursement is not guaranteed and depends on your specific insurance policy and benefits.</li>
+         
+            </ul>
+             <p>If you have questions about your coverage or reimbursement options, I encourage you to contact your insurance provider directly. I am also happy to provide documentation needed to assist with the process.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>Rates</h3>
+      <table>
+        <tr>
+          <th>Session Type</th>
+          <th>Rate</th>
+        </tr>
+        <tr>
+          <td>Psychotherapy (60 minutes)</td>
+          <td>$180</td>
+        </tr>
+      </table>
+    </section>
+    <section id="call-to-action">
+      <h2>Taking the Next Step</h2>
+      <p>Beginning therapy can feel like a big decision, but you don’t have to do it alone. If you’re ready to take the next step toward greater clarity, balance, and emotional health, I’d be honored to support you. Together, we can create lasting change.</p>
+
+    </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>To schedule a session or learn more about the services offered, please reach out via the contact information below.</p>
+      <p><strong>Email:</strong> <a href="mailto:info@brightwell-mental-health.com">info@brightwell-mental-health.com</a></p>
+      <p><strong>Phone:</strong> <a href="tel:16097310876">(609) 731-0876</a></p>
+      <p><strong>Session Format:</strong> Telehealth sessions only</p>
+      <p><strong>Availability:</strong> By appointment only</p>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Privacy Policy:</strong> All client information is confidential and managed in accordance with ethical and legal standards.</p>
+    <p>&copy; 2025 BrightWell Mental Health, LLC</p>
+    <p><a href="#top">Back to top</a></p>
+  </footer>
+</body>
+</html>
